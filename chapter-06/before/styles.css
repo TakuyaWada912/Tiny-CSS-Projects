@@ -1,0 +1,57 @@
+html, body {
+    /* ウィンドウの端から端まで確実に移動するため。 */
+    margin: 0;
+    padding: 0;
+
+    /*
+    コンテンツの背景にグラデーションを使用している。
+    グラデーションは画像としてCSSでは扱われる。
+    そのため、bodyの高さにフィットしたグラデーション画像が作成される。
+    bodyの高さが画面の途中で切れていると、グラデーション画像が2枚繰り返されてしまう。
+    background-repeat: no-repeat; も使用できるが、そうするとBodyの高さ分1回繰り返されるだけで
+    余った部分は真っ白になる。
+    それを回避するためにmin-heightを使用してhtml, body要素の高さを指定する。
+    vhはビューポートの割合指定。ビューポートはブラウザが現在表示している画面のコト。
+    100%にすることで、画面いっぱいに1枚のグラデーション画像が貼り付けられることになる。
+    */
+    min-height: 100vh;
+}
+
+body {
+    /* 変数定義 */
+    --primary: #de3c4b;
+    --primary-contrast: white;
+    --secondary: #717777;
+    --font: Helvetica, Arial, sans-serif;
+    --text-color: #2D3142;
+    --card-background: #ffffff;
+    --technologies-background: #ffdadd;
+    --page-background: linear-gradient(#4F5D75, #2D3142);
+    --imageSize: 200px;
+
+    /* 基本設定 */
+    background:var(--page-background);
+    font-family: var(--font);
+    color: var(--text-color);
+
+    /* カードを中央に配置するため */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* min-heightが100vhになってるから画面の中央に設定できる。 */
+}
+
+.card {
+    /* レイアウトに立体感を出すために背景と影を設定 */
+    background-color: var(--card-background);
+    box-shadow: 0 0 55px rgba(38, 40, 45, .75);
+
+    /*
+    widthとmax-widthをどちらも併用することで大きい画面で見るときは大きくなりすぎないように。 
+    小さい画面の時は小さくなりすぎないように。
+    */
+    width: 75vw;
+    max-width: 500px;
+
+    /* デザインを柔らかくするため。 */
+    border-radius: 4px;
+}
