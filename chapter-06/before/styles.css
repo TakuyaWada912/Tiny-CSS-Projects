@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     /* ウィンドウの端から端まで確実に移動するため。 */
     margin: 0;
     padding: 0;
@@ -30,14 +31,15 @@ body {
     --imageSize: 200px;
 
     /* 基本設定 */
-    background:var(--page-background);
+    background: var(--page-background);
     font-family: var(--font);
     color: var(--text-color);
 
     /* カードを中央に配置するため */
     display: flex;
     justify-content: center;
-    align-items: center; /* min-heightが100vhになってるから画面の中央に設定できる。 */
+    align-items: center;
+    /* min-heightが100vhになってるから画面の中央に設定できる。 */
 }
 
 .card {
@@ -54,4 +56,20 @@ body {
 
     /* デザインを柔らかくするため。 */
     border-radius: 4px;
+
+    text-align: center;
+
+    /* はみ出した分の高さを確保する */
+    margin: calc(var(--imageSize) / 3 + 24px) 24px;
+}
+
+img.portrait {
+    width: var(--imageSize);
+    height: var(--imageSize);
+    /* アスペクト比を保つ */
+    object-fit: cover;
+    border-radius: 50%;
+
+    /** 画像の1/3だけはみ出す */
+    margin-top: calc(-1 * var(--imageSize) / 3);
 }
