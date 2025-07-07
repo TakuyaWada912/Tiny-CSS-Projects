@@ -18,3 +18,38 @@ body {
 img {
   max-width: 100%;
 }
+
+p {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* ドロップキャップに適したフォントのDL */
+@import url('https://googleapis.com/css2?family=Passions+Conflict&display=swap');
+
+/*
+ドロップキャップ作成
+
+first-of-type: 最初の段落
+first-latter: 最初の文字
+*/
+p:first-of-type::first-letter {
+  font-size: 6em;
+  float: left; /* ここで回り込ませてる */
+  line-height: .6; /*ここは画面見ながら要調整 */
+  font-family: 'Passions Conflict', cursive;
+}
+
+blockquote {
+  font-family: 'Passions Conflict', cursive;
+  font-size: 2em;
+  line-height: 1;
+}
+
+img.compass {
+  aspect-ratio: 1;
+  float: right;
+  shape-outside: circle(50%);
+  clip-path: circle(50%);
+  margin-left: 1rem;
+}
