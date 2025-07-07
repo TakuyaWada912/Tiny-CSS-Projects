@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+
+body {
+    margin-top: 40px;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    background: #010101;
+}
+
+main {
+    display: grid;
+    max-width: 1024px;
+    grid-gap: 1rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    font: 900 120px "Rubik", sans-serif;
+    background: url("bg-img.jpg");
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip:  text;
+    -webkit-text-fill-color: transparent;
+    color: white;
+}
+
+main > section {
+    background-size: cover;
+    background-color: #3a8491;
+    border-radius: 4px;
+}
+
+main > section > div {
+    background-color: rgba(0, 0, 0, .75);
+    margin: 1rem;
+    padding: 1rem;
+    color: whitesmoke;
+    text-align: center;
+    font: 14px "Rubik", sans-serif;
+    height: calc(100% - 4rem);
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+section p {
+    font: italic 1.125rem "Cardo", cursive;
+    line-height: 1.35;
+}
+
+a {
+    background-color: #ffa600;
+    color: rgba(0, 0, 0, .75);
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #e69500;
+}
+
+a:focus {
+    outline: 1px dashed #e69500;
+    outline-offset: 3px;
+}
+
+.meeru-island {
+    background-image:  url("1.jpg");
+}
+.flamingo-beech {
+    background-image:  url("2.jpg");
+}
+.protur-safari {
+    background-image:  url("3.jpg");
+}
+.mountain-view {
+    background-image:  url("4.jpg");
+}
+
+@media(min-width: 700px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    main > section {
+        height: 350px;
+    }
+}
+
+@media (min-width: 950px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (hover: hover) and (min-width: 700px) and (prefers-reduced-motion: no-preference) {
+    main > section > div {
+        transform: translateY(calc(350px - 8rem));
+        height: 5rem;
+        overflow: hidden;
+        transition: all 700ms ease-in-out;
+    }
+    div > *:not(h2) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: all 700ms ease-in-out;
+    }
+    section:hover div,
+    section:focus-within div {
+        transform: translateY(0);
+        height: calc(350px - 4rem);
+    }
+    section:hover div > *:not(h2),
+    section:focus-within div > *:not(h2) {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    main > section > div > *:not(h2) {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+}
