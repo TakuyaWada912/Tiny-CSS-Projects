@@ -1,1 +1,150 @@
+@import url('http://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #171717;
+    font-variant-numeric: lining-nums;
+    background: #fbffff;
+    padding: 1rem;
+}
+
+section {
+    margin: 1rem 0;
+}
+
+section h2 {
+    padding: 1rem;
+    margin: 0;
+}
+
+h1, h2 {
+    color: #2c6c69;
+}
+
+button, .button, input {
+    background: none;
+    border-radius: 4px;
+    padding: 10px;
+    border: solid 1px #ddd;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .button:hover {
+    outline: dotted 1px #2c6c69;
+    outline-offset: 2px;
+}
+
+button:focus, .button:focus {
+    outline: solid 2px #2c6c69;
+    outline-offset: 2px;
+}
+
+button.primary, .button.primary {
+    border-color: #2c6c69;
+    background: #2c6c69;
+    color: #ffffff;
+}
+
+button.secondary, .button.secondary {
+    border-color: #2c6c69;
+    color: #2c6c69;
+}
+
+button.destructive {
+    border-color: #9d1616;
+    color: #9d1616;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+button.destructive img {
+    vertical-align: middle;
+}
+
+button.destructive:hover, button.destructive:focus {
+    outline-color: #9d1616;
+}
+
+th, dt, td[data-name]::before {
+    color: #3a3a3a;
+    font-weight: normal;
+    font-size: .875em;
+}
+
+tbody td:nth-of-type(2),
+tfoot td {
+    font-weight: bold;
+}
+
+tbody tr:nth-of-type(even) {
+    background: #f2fcfc;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border-top: solid 1px #aeb7b7;
+}
+
+dt::after {
+    content: ":";
+}
+
+section {
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 7px #aeb7b7;
+}
+
+dl {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: auto max-content;
+    padding: 0 1rem;;
+}
+
+dd {
+    text-align: right;
+}
+
+.actions {
+    padding: 1rem;
+    text-align: center;
+}
+
+.actions a {
+    margin: 0 .25rem .5rem;
+}
+
+@media(max-width: 549px) {
+    td, tr {display: block;}
+    table td > img {
+        float: left;
+        margin-right: 10px;
+    }
+    thead {
+        position:absolute;
+        left: -9999px;
+    }
+    td {
+        text-align: right;
+        padding: 5px;
+        vertical-align: baseline;
+    }
+    td[data-name]::before {
+        content: attr(data-name) ":";
+        float: left;
+    }
+    tfoot tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    tfoot th {
+        padding: 5px;
+    }
+}
